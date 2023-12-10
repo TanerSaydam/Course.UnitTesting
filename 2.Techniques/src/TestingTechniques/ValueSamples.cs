@@ -46,7 +46,7 @@ public class ValueSamples
         return a / b;
     }
 
-    public void EnsureThatDivisorIsNotZero(int b)
+    private void EnsureThatDivisorIsNotZero(int b)
     {
         if(b == 0)
         {
@@ -60,4 +60,6 @@ public class ValueSamples
     {
         ExampleEvent(this, EventArgs.Empty);
     }
+
+    internal int InternalSecretNumber = 42;
 }
