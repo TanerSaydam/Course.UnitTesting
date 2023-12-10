@@ -5,9 +5,9 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Fundamentals", "1.Fundamentals", "{196752BA-EB27-45D0-ACA3-8C52AADE3330}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorLibrary", "CalculatorLibrary\CalculatorLibrary.csproj", "{6AAB500A-5AF4-4824-924A-CCC94FB38123}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorLibrary", "CalculatorLibrary\CalculatorLibrary.csproj", "{6AAB500A-5AF4-4824-924A-CCC94FB38123}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorLibrary.Tests.Unit", "CalculatorLibraryTests\CalculatorLibrary.Tests.Unit.csproj", "{45D98F78-28DE-4509-ABCA-E9EA0A62EEE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorLibrary.Tests.Unit", "CalculatorLibraryTests\CalculatorLibrary.Tests.Unit.csproj", "{45D98F78-28DE-4509-ABCA-E9EA0A62EEE0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{84B71F45-2220-44A5-8D1D-814912A15565}"
 EndProject
@@ -15,16 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CA395D88-2
 	ProjectSection(SolutionItems) = preProject
 		Ödev1.txt = Ödev1.txt
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Techniques", "2.Techniques", "{21A710A7-6D56-49EF-AE8B-1D5228911418}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{ED14F36A-7FED-43D1-ADF7-BD0E5AD6BDE6}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AEE0ED76-5A29-441E-8AA3-1F2DCE695D8B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueSamples", "ValueSamples\ValueSamples.csproj", "{63C437CD-488B-4103-A911-B44C676D37BD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingTechniques.Tests.Unit", "TestingTechniques.Tests.Unit\TestingTechniques.Tests.Unit.csproj", "{E5A5D209-7461-4B3C-84B0-6D63BE7439CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,14 +30,6 @@ Global
 		{45D98F78-28DE-4509-ABCA-E9EA0A62EEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45D98F78-28DE-4509-ABCA-E9EA0A62EEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45D98F78-28DE-4509-ABCA-E9EA0A62EEE0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{63C437CD-488B-4103-A911-B44C676D37BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{63C437CD-488B-4103-A911-B44C676D37BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{63C437CD-488B-4103-A911-B44C676D37BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{63C437CD-488B-4103-A911-B44C676D37BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E5A5D209-7461-4B3C-84B0-6D63BE7439CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5A5D209-7461-4B3C-84B0-6D63BE7439CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5A5D209-7461-4B3C-84B0-6D63BE7439CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5A5D209-7461-4B3C-84B0-6D63BE7439CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,10 +39,6 @@ Global
 		{45D98F78-28DE-4509-ABCA-E9EA0A62EEE0} = {CA395D88-2D6C-4127-8F7F-183F913F8880}
 		{84B71F45-2220-44A5-8D1D-814912A15565} = {196752BA-EB27-45D0-ACA3-8C52AADE3330}
 		{CA395D88-2D6C-4127-8F7F-183F913F8880} = {196752BA-EB27-45D0-ACA3-8C52AADE3330}
-		{ED14F36A-7FED-43D1-ADF7-BD0E5AD6BDE6} = {21A710A7-6D56-49EF-AE8B-1D5228911418}
-		{AEE0ED76-5A29-441E-8AA3-1F2DCE695D8B} = {21A710A7-6D56-49EF-AE8B-1D5228911418}
-		{63C437CD-488B-4103-A911-B44C676D37BD} = {ED14F36A-7FED-43D1-ADF7-BD0E5AD6BDE6}
-		{E5A5D209-7461-4B3C-84B0-6D63BE7439CE} = {ED14F36A-7FED-43D1-ADF7-BD0E5AD6BDE6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {613BD35D-7EAC-41CE-A10C-E5E243CBA1A4}
