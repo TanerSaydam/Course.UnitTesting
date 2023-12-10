@@ -94,8 +94,7 @@ public class ValueSamplesTests
 
         _sut.RaiseExampleEvent();
 
-        monitorSubject.Should().Raise("ExampleEvent");
-        
+        monitorSubject.Should().Raise("ExampleEvent");        
     }
 
     [Fact]
