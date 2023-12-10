@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using Moq;
 using NSubstitute;
 using UnderstandingDependecies.Api.Models;
 using UnderstandingDependecies.Api.Repositories;
@@ -9,6 +10,7 @@ public class UserServiceTests
 {
     private readonly UserService _sut;
     private readonly IUserRepository _userRepository = Substitute.For<IUserRepository>();
+    //private readonly Mock<IUserRepository> _userRepository = new();
     public UserServiceTests()
     {
         _sut = new(_userRepository);
@@ -19,6 +21,7 @@ public class UserServiceTests
     {
         // Arrange
         _userRepository.GetAllAsync().Returns(Array.Empty<User>());
+        //_userRepository.Setup(s=> s.GetAllAsync()).ReturnsAsync(Array.Empty<User>());
 
         // Act
         var users = await _sut.GetAllAsync();
