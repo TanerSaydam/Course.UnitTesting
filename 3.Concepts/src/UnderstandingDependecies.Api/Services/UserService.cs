@@ -6,12 +6,12 @@ namespace UnderstandingDependecies.Api.Services;
 
 public class UserService
 {
-    private readonly UserRepository _userRepository;
+    private readonly IUserRepository _userRepository;
     private readonly ILogger<UserService> _logger;
 
-    public UserService()
+    public UserService(IUserRepository userRepository)
     {
-        _userRepository = new UserRepository();
+        _userRepository = userRepository;
         _logger = new Logger<UserService>(new LoggerFactory());
     }
 

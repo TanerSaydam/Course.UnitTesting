@@ -4,13 +4,13 @@ using UnderstandingDependecies.Api.Models;
 
 namespace UnderstandingDependecies.Api.Repositories;
 
-public class UserRepository
+public class UserRepository : IUserRepository
 {
     private readonly ApplicationDbContext _context;
 
-    public UserRepository()
+    public UserRepository(ApplicationDbContext context)
     {
-        _context = new();
+        _context = context;
     }
 
     public async Task<IEnumerable<User>> GetAllAsync()
