@@ -38,4 +38,19 @@ public class ValueSamplesTests
         dateOfBirth.Should().BeAfter(new(1900, 01, 01));
         dateOfBirth.Should().BeBefore(new(2900, 01, 01));
     }
+
+    [Fact]
+    public void ObjectAssertionTest()
+    {
+        var expected = new User
+        {
+            FullName = "Taner Saydam",
+            Age = 33,
+            DateOfBirth = new(1989, 09, 03)
+        };
+
+        var user = _sut.AppUser;
+
+        user.Should().BeEquivalentTo(expected);
+    }
 }
