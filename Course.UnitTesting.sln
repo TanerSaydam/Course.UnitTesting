@@ -5,10 +5,6 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Fundamentals", "1.Fundamentals", "{196752BA-EB27-45D0-ACA3-8C52AADE3330}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorLibrary", "CalculatorLibrary\CalculatorLibrary.csproj", "{6AAB500A-5AF4-4824-924A-CCC94FB38123}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorLibrary.Tests.Unit", "CalculatorLibraryTests\CalculatorLibrary.Tests.Unit.csproj", "{45D98F78-28DE-4509-ABCA-E9EA0A62EEE0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{84B71F45-2220-44A5-8D1D-814912A15565}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CA395D88-2D6C-4127-8F7F-183F913F8880}"
@@ -16,29 +12,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CA395D88-2
 		Ödev1.txt = Ödev1.txt
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorLibrary", "1.Fundamentals\src\CalculatorLibrary\CalculatorLibrary.csproj", "{990C1DD1-D4BB-4A70-AB1E-95B89E22D703}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorLibrary.Tests.Unit", "1.Fundamentals\test\CalculatorLibraryTests\CalculatorLibrary.Tests.Unit.csproj", "{BB2AB9EF-F033-4076-8B2F-E7A71B4A62F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6AAB500A-5AF4-4824-924A-CCC94FB38123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AAB500A-5AF4-4824-924A-CCC94FB38123}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AAB500A-5AF4-4824-924A-CCC94FB38123}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AAB500A-5AF4-4824-924A-CCC94FB38123}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45D98F78-28DE-4509-ABCA-E9EA0A62EEE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45D98F78-28DE-4509-ABCA-E9EA0A62EEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45D98F78-28DE-4509-ABCA-E9EA0A62EEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45D98F78-28DE-4509-ABCA-E9EA0A62EEE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{990C1DD1-D4BB-4A70-AB1E-95B89E22D703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{990C1DD1-D4BB-4A70-AB1E-95B89E22D703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{990C1DD1-D4BB-4A70-AB1E-95B89E22D703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{990C1DD1-D4BB-4A70-AB1E-95B89E22D703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB2AB9EF-F033-4076-8B2F-E7A71B4A62F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB2AB9EF-F033-4076-8B2F-E7A71B4A62F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB2AB9EF-F033-4076-8B2F-E7A71B4A62F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB2AB9EF-F033-4076-8B2F-E7A71B4A62F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{6AAB500A-5AF4-4824-924A-CCC94FB38123} = {84B71F45-2220-44A5-8D1D-814912A15565}
-		{45D98F78-28DE-4509-ABCA-E9EA0A62EEE0} = {CA395D88-2D6C-4127-8F7F-183F913F8880}
 		{84B71F45-2220-44A5-8D1D-814912A15565} = {196752BA-EB27-45D0-ACA3-8C52AADE3330}
 		{CA395D88-2D6C-4127-8F7F-183F913F8880} = {196752BA-EB27-45D0-ACA3-8C52AADE3330}
+		{990C1DD1-D4BB-4A70-AB1E-95B89E22D703} = {84B71F45-2220-44A5-8D1D-814912A15565}
+		{BB2AB9EF-F033-4076-8B2F-E7A71B4A62F3} = {CA395D88-2D6C-4127-8F7F-183F913F8880}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {613BD35D-7EAC-41CE-A10C-E5E243CBA1A4}
