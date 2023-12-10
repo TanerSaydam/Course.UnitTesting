@@ -86,4 +86,14 @@ public class ValueSamplesTests
 
         result.Should().Throw<DivideByZeroException>().WithMessage("Attempted to divide by zero.");
     }
+
+    [Fact]
+    public void EventRaisedAssertionExample()
+    {
+        var monitorSubject = _sut.Monitor();
+
+        _sut.RaiseExampleEvent();
+
+        monitorSubject.Should().Raise("ExampleEvent");
+    }
 }

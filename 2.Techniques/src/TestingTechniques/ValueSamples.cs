@@ -53,4 +53,11 @@ public class ValueSamples
             throw new DivideByZeroException();
         }
     }
+
+    public event EventHandler ExampleEvent;    
+
+    public virtual void RaiseExampleEvent()
+    {
+        ExampleEvent(this, EventArgs.Empty);
+    }
 }
