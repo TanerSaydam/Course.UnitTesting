@@ -37,4 +37,20 @@ public class ValueSamples
     };
 
     public IEnumerable<int> Numbers = new[] { 5, 10, 25, 50 };
+
+    public float Divide(int a, int b)
+    {
+        EnsureThatDivisorIsNotZero(a);
+        EnsureThatDivisorIsNotZero(b);
+
+        return a / b;
+    }
+
+    public void EnsureThatDivisorIsNotZero(int b)
+    {
+        if(b == 0)
+        {
+            throw new DivideByZeroException();
+        }
+    }
 }

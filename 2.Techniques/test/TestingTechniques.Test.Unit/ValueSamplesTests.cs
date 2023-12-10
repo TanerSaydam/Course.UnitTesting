@@ -78,4 +78,12 @@ public class ValueSamplesTests
 
         numbers.Should().Contain(5);
     }
+
+    [Fact]
+    public void ExceptionThrownAssertionExample()
+    {
+        Action result = () => _sut.Divide(1, 0);
+
+        result.Should().Throw<DivideByZeroException>().WithMessage("Attempted to divide by zero.");
+    }
 }
