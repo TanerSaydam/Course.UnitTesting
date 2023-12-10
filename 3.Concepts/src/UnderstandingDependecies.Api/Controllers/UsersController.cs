@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using UnderstandingDependecies.Api.Repositories;
 using UnderstandingDependecies.Api.Services;
 
 namespace UnderstandingDependecies.Api.Controllers;
@@ -8,9 +9,9 @@ public class UsersController : ControllerBase
 {
     private readonly UserService _userService;
 
-    public UsersController(UserService userService)
+    public UsersController()
     {
-        _userService = userService;
+        _userService = new UserService(new UserRepository());
     }
 
     [HttpGet]

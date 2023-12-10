@@ -8,9 +8,9 @@ public class UserRepository : IUserRepository
 {
     private readonly ApplicationDbContext _context;
 
-    public UserRepository(ApplicationDbContext context)
+    public UserRepository()
     {
-        _context = context;
+        _context = new();
     }
 
     public async Task<IEnumerable<User>> GetAllAsync()
