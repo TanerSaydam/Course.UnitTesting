@@ -1,13 +1,14 @@
 ﻿using FluentValidation;
 using System.Diagnostics;
 using Users.Api.DTOs;
+using Users.Api.Logging;
 using Users.Api.Models;
 using Users.Api.Repositories;
 using Users.Api.Validators;
 
 namespace Users.Api.Services;
 
-public sealed class UserService(IUserRepository userRepository, ILogger<User> logger) : IUserService
+public sealed class UserService(IUserRepository userRepository, ILoggerAdapter<UserService> logger) : IUserService
 {
     public async Task<bool> CreateAsync(CreateUserDto request, CancellationToken cancellationToken = default)
     {
