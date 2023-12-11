@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using Moq;
 using NSubstitute;
 using UnderstandingDependecies.Api.Models;
 using UnderstandingDependecies.Api.Repositories;
