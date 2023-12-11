@@ -1,6 +1,27 @@
 @Users.Api_HostAddress = http://localhost:5033
 
-GET {{Users.Api_HostAddress}}/weatherforecast/
+GET {{Users.Api_HostAddress}}/api/Users/GetAll
 Accept: application/json
+
+###
+
+GET {{Users.Api_HostAddress}}/api/Users/GetById/1184e0f2-4737-46f8-a428-a291383baaa2
+Accept: application/json
+
+###
+
+POST {{Users.Api_HostAddress}}/api/Users/Create
+Accept: application/json
+Content-Type: application/json
+{
+  "fullName": "Taner Saydam2"
+}
+
+
+###
+
+Get {{Users.Api_HostAddress}}/api/Users/DeleteById/8312b748-5e8b-43b3-b82f-57f83c96b7b5
+Accept: application/json
+
 
 ###
