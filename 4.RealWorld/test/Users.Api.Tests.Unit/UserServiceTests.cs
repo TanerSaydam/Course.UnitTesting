@@ -1,8 +1,9 @@
 ﻿using FluentAssertions;
-using Microsoft.Extensions.Logging;
+using FluentValidation;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;
 using NSubstitute.ReturnsExtensions;
+using Users.Api.DTOs;
 using Users.Api.Logging;
 using Users.Api.Models;
 using Users.Api.Repositories;
@@ -150,4 +151,97 @@ public class UserServiceTests
             Arg.Is(userId));
     }
 
+    [Fact]
+    public async Task CreateAsync_ShouldThrownAnError_WhenUserCreateDetailsAreNotValid()
+    {
+        // Arrange
+        CreateUserDto request = new("");
+
+        // Act
+        var action = async ()=> await _sut.CreateAsync(request);
+
+        // Assert
+        await action.Should().ThrowAsync<ValidationException>();
+    }
+
+    [Fact]
+    public async Task CreateAsync_ShouldThrownAnError_WhenUserNameExist()
+    {
+        // Arrange
+        _userRepository.NameIsExist(Arg.Any<string>()).Returns(true);
+
+        // Act
+        var action = async () => await _sut.CreateAsync(new("Taner Saydam"));
+
+        // Assert
+        await action.Should().ThrowAsync<ArgumentException>();
+    }
+
+    [Fact]
+    public void CreateAsync_ShouldCreateUserDtoToUserObject()
+    {
+        // Arrange
+        CreateUserDto request = new("Taner Saydam");
+
+        // Act
+        var user = _sut.CreateUserDtoToUserObject(request);
+
+        // Assert
+        user.FullName.Should().Be(request.FullName);
+    }
+
+    [Fact]
+    public async Task CreateAsync_ShouldCreateUser_WhenDetailsAreValidAndUnique()
+    {
+        // Arrange
+        CreateUserDto requet = new("Taner Saydam");
+        _userRepository.NameIsExist(requet.FullName).Returns(false);
+        _userRepository.CreateAsync(Arg.Any<User>()).Returns(true);
+
+        // Act
+        var result = await _sut.CreateAsync(requet);
+
+        // Assert
+        result.Should().Be(true);
+    }
+
+    [Fact]
+    public async Task CreateAsync_ShouldLogMessages_WhenInvoked()
+    {
+        // Arrange
+        CreateUserDto requet = new("Taner Saydam");
+        _userRepository.NameIsExist(requet.FullName).Returns(false);
+        _userRepository.CreateAsync(Arg.Any<User>()).Returns(true);
+
+        // Act
+        await _sut.CreateAsync(requet);
+
+        // Assert
+        _logger.Received(1).LogInformation(
+            Arg.Is("Creating user with id: {0} and name: {1}"), 
+            Arg.Any<Guid>(), 
+            Arg.Is(requet.FullName));
+        _logger.Received(1).LogInformation(
+            Arg.Is("User with id: {0} created in {1}ms"),
+            Arg.Any<Guid>(),
+            Arg.Any<long>());
+    }
+
+    [Fact]
+    public async Task CreateAsync_ShouldLogMessagesAndException_WhenExceptionIsThrown()
+    {
+        // Arrange
+        CreateUserDto requet = new("Taner Saydam");
+        var exception = new ArgumentException("Something went wrong while creating a user");
+        _userRepository.CreateAsync(Arg.Any<User>()).Throws(exception);
+
+        // Act
+        var requestAction = async () => await _sut.CreateAsync(requet);
+
+        // Assert
+        await requestAction.Should()
+             .ThrowAsync<ArgumentException>();
+
+        _logger.Received(1).LogError(Arg.Is(exception), Arg.Is("Something went wrong while creating a user"));
+    }
 }
